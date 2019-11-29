@@ -13,7 +13,7 @@ const retrieveAccountsOverGivenAmount = (req, res) => {
     let balance = req.params.balance
     balance = parseInt(balance)
     DbService((db) => {
-        AccountsService.retrieveAccountsOverGivenAmount(db, balance, (docs) => {
+        AccountsService.getAccountsOverGivenAmount(db, balance, (docs) => {
             res.json(docs)
         })
     })
@@ -23,7 +23,7 @@ const retrieveAccountsUnderGivenAmount = (req, res) => {
     let balance = req.params.balance
     balance = parseInt(balance)
     DbService((db) => {
-        AccountsService.retrieveAccountsUnderGivenAmount(db, balance, (docs) => {
+        AccountsService.getAccountsUnderGivenAmount(db, balance, (docs) => {
             res.json(docs)
         })
     })
@@ -50,4 +50,6 @@ const createAccount = (req, res) => {
 }
 
 module.exports.getAccounts = getAccounts
+module.exports.createAccount = createAccount
+module.exports.retr = createAccount
 module.exports.createAccount = createAccount
