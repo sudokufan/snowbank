@@ -20,7 +20,7 @@ const createAccount = (req, res) => {
 
     DbService((db) => {
         AccountsService.createAccount(db, newAccountInfo, (result) => {
-            if (result.modifiedCount) {
+            if (result.insertedCount) {
                 res.send('account created successfully')
             } else {
                 res.send('account was not created, check with administrator')
