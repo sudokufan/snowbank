@@ -28,3 +28,5 @@ const retrieveAccountsOverGivenAmount = (db, balance, cb) => {
 
 module.exports.getAccounts = getAccounts
 module.exports.createAccount = createAccount
+module.exports.retrieveAccountsUnderGivenAmount = retrieveAccountsUnderGivenAmount
+module.exports.retrieveAccountsOverGivenAmount = retrieveAccountsOverGivenAmount
