@@ -9,4 +9,13 @@ const getAccounts = (req, res) => {
     })
 }
 
+const createAccount = (req, res) => {
+    DbService((db) => {
+        AccountsService.getAccounts(db, (documents) => {
+            res.json(documents)
+        })
+    })
+}
+
 module.exports.getAccounts = getAccounts
+module.exports.createAccount = createAccount
