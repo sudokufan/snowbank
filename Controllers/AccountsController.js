@@ -9,7 +9,7 @@ const getAccounts = (req, res) => {
     })
 }
 
-const retrieveAccountsOverGivenAmount = (req, res) => {
+const getAccountsOverGivenAmount = (req, res) => {
     let balance = req.params.balance
     balance = parseInt(balance)
     DbService((db) => {
@@ -19,7 +19,7 @@ const retrieveAccountsOverGivenAmount = (req, res) => {
     })
 }
 
-const retrieveAccountsUnderGivenAmount = (req, res) => {
+const getAccountsUnderGivenAmount = (req, res) => {
     let balance = req.params.balance
     balance = parseInt(balance)
     DbService((db) => {
