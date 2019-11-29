@@ -3,8 +3,28 @@ const AccountsService = require('../Services/AccountsService')
 
 const getAccounts = (req, res) => {
     DbService((db) => {
-        AccountsService.getAccounts(db, (documents) => {
-            res.json(documents)
+        AccountsService.getAccounts(db, (docs) => {
+            res.json(docs)
+        })
+    })
+}
+
+const getAccountsOverGivenAmount = (req, res) => {
+    let balance = req.params.balance
+    balance = parseInt(balance)
+    DbService((db) => {
+        AccountsService.getAccountsOverGivenAmount(db, balance, (docs) => {
+            res.json(docs)
+        })
+    })
+}
+
+const getAccountsUnderGivenAmount = (req, res) => {
+    let balance = req.params.balance
+    balance = parseInt(balance)
+    DbService((db) => {
+        AccountsService.getAccountsUnderGivenAmount(db, balance, (docs) => {
+            res.json(docs)
         })
     })
 }
@@ -31,3 +51,5 @@ const createAccount = (req, res) => {
 
 module.exports.getAccounts = getAccounts
 module.exports.createAccount = createAccount
+module.exports.getAccountsOverGivenAmount = getAccountsOverGivenAmount
+module.exports.getAccountsUnderGivenAmount = getAccountsUnderGivenAmount
