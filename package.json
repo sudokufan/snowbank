@@ -1,0 +1,24 @@
+{
+  "name": "ex10snowbank",
+  "version": "1.0.0",
+  "description": "A banking app built with node.js and react",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudokufan/snowbank.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudokufan/snowbank/issues"
+  },
+  "homepage": "https://github.com/sudokufan/snowbank#readme"
+}
