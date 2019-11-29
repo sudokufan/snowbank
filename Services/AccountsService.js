@@ -4,3 +4,5 @@ const getAccounts = (db, callback) => {
         callback(docs)
     })
 }
+
+module.exports.getAccounts = getAccounts
