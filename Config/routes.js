@@ -2,9 +2,9 @@ const AccountsController = require('../Controllers/AccountsController')
 
 const routes = (app) => {
 
-    app.get('/accounts/:balance/lessthan', AccountsController.retrieveAccountsUnderGivenAmount)
+    app.get('/accounts/:balance/lessthan', AccountsController.getAccountsUnderGivenAmount)
 
-    app.get('/accounts/:balance/morethan', AccountsController.retrieveAccountsOverGivenAmount)
+    app.get('/accounts/:balance/morethan', AccountsController.getAccountsOverGivenAmount)
 
     app.get('/accounts', AccountsController.getAccounts)
 
