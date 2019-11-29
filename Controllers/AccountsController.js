@@ -51,5 +51,5 @@ const createAccount = (req, res) => {
 
 module.exports.getAccounts = getAccounts
 module.exports.createAccount = createAccount
-module.exports.retr = createAccount
-module.exports.createAccount = createAccount
+module.exports.getAccountsOverGivenAmount = getAccountsOverGivenAmount
+module.exports.getAccountsUnderGivenAmount = getAccountsUnderGivenAmount
