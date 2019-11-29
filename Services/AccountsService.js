@@ -5,9 +5,11 @@ const getAccounts = (db, callback) => {
     })
 }
 
-const createAccount = (db, newAccountInfo) => {
+const createAccount = (db, newAccountInfo, cb) => {
     let collection = db.collection('accounts')
-    collection.insertOne(newAccountInfo)
+    collection.insertOne(newAccountInfo, (err, results) => {
+        cb(results)
+    })
 }
 
 module.exports.getAccounts = getAccounts
