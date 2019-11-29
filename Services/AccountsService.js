@@ -1,7 +1,7 @@
-const getAccounts = (db, callback) => {
+const getAccounts = (db, cb) => {
     let collection = db.collection('accounts')
     collection.find({}).toArray((err, docs) => {
-        callback(docs)
+        cb(docs)
     })
 }
 
