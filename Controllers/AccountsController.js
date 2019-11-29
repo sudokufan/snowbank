@@ -10,9 +10,21 @@ const getAccounts = (req, res) => {
 }
 
 const createAccount = (req, res) => {
+    let accountHolderName = req.body.name
+    let accountBalance = req.body.balance
+
+    let newAccountInfo = {
+        name: accountHolderName,
+        balance: accountBalance
+    }
+
     DbService((db) => {
-        AccountsService.getAccounts(db, (documents) => {
-            res.json(documents)
+        AccountsService.createAccount(db, newAccountInfo, (result) => {
+            if (result.modifiedCount) {
+                res.send('account created successfully')
+            } else {
+                res.send('account was not created, check with administrator')
+            }
         })
     })
 }
